@@ -1,6 +1,13 @@
 {
   "name": "carly-api",
   "version": "1.0.0",
+  "nodeMon:": {
+    "events": {
+      "restart": "kill-port 3000", 
+      "crash": "kill-port 3000" 
+    }, 
+    "delay": "1500"
+  },
   "scripts": {
     "server": "nodemon --exec babel-node ./src/index.js"
   },
