@@ -1,0 +1,48 @@
+{
+  "name": "carly-api",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "nodemon --exec babel-node ./src/index.js"
+  },
+  "author": "Martin Stankov <martin.stankov@accedia.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-regenerator": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "apollo-angular": "^1.5.0",
+    "apollo-angular-link-http": "^1.3.1",
+    "apollo-cache-inmemory": "^1.3.2",
+    "apollo-client": "^2.4.0",
+    "apollo-link": "^1.2.0",
+    "apollo-server-express": "^2.3.3",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "core-js": "^2.5.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1",
+    "graphql-server-express": "^1.4.0",
+    "graphql-tag": "^2.10.0",
+    "graphql-tools": "^4.0.4",
+    "kill-port": "^1.3.2",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.8",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "codelyzer": "~4.3.0"
+  }
+}
