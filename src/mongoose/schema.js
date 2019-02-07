@@ -22,6 +22,11 @@ const UserSchema = new Schema({
     email: String,
     password: String,
     dateAdded: { type: Date, required: false, default: Date.now() },
+    address: {
+        city: { type: String, required: true },
+        street: { type: String, required: true },
+        zipcode: Number
+    },
     carIds: [Schema.Types.ObjectId]
 });
 

@@ -35,7 +35,8 @@ export default {
             return await User.create({
                 email: input.email,
                 password: input.password,
-                carIds: input.carIds
+                carIds: input.carIds,
+                address: input.address
             });
         },
         updateUser: async (parent, { id, input }) => {
@@ -45,7 +46,8 @@ export default {
                     $set: { 
                         email: input.email, 
                         password: input.password,
-                        carIds: input.carIds
+                        carIds: input.carIds,
+                        address: input.address
                     }
                 }, 
                 { new: true }, 

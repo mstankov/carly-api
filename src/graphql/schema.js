@@ -11,12 +11,19 @@ export default gql(`
 
     scalar Date
 
+    type Address {
+        city: String
+        street: String
+        zipcode: Int
+    }
+
     type User {
         id: ID
         email: String
         password: String
         dateAdded: Date
         carIds: [ID]
+        address: Address
     }
 
     type Car {
@@ -47,10 +54,17 @@ export default gql(`
         horsePower: Int
     }
 
+    input AddressInput {
+        city: String
+        street: String
+        zipcode: Int
+    }
+
     input UserInput {
         email: String
         password: String
         carIds: [ID]
+        address: AddressInput
     }
 
     type Mutation {
