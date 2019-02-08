@@ -36,7 +36,9 @@ export default {
                 email: input.email,
                 password: input.password,
                 carIds: input.carIds,
-                address: input.address
+                address: input.address,
+                firstName: input.firstName,
+                lastName: input.lastName
             });
         },
         updateUser: async (parent, { id, input }) => {
@@ -47,7 +49,9 @@ export default {
                         email: input.email, 
                         password: input.password,
                         carIds: input.carIds,
-                        address: input.address
+                        address: input.address,
+                        firstName: input.firstName,
+                        lastName: input.lastName
                     }
                 }, 
                 { new: true }, 

@@ -21,6 +21,8 @@ const UserSchema = new Schema({
     _id: { type: Schema.Types.ObjectId, auto: true },
     email: String,
     password: String,
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     dateAdded: { type: Date, required: false, default: Date.now() },
     address: {
         city: { type: String, required: true },

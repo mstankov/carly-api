@@ -21,6 +21,8 @@ export default gql(`
         id: ID
         email: String
         password: String
+        firstName: String
+        lastName: String
         dateAdded: Date
         carIds: [ID]
         address: Address
@@ -63,6 +65,8 @@ export default gql(`
     input UserInput {
         email: String
         password: String
+        firstName: String
+        lastName: String
         carIds: [ID]
         address: AddressInput
     }
