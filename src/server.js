@@ -14,6 +14,7 @@ const init = () => {
     app.use(
         cors(),
         bodyParser.json(),
+        bodyParser.text({ type: 'application/graphql' }),
         bodyParser.urlencoded({ extended: true })
     );
 

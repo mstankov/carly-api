@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "nodeMon:": {
     "events": {
-      "restart": "kill-port 3000", 
-      "crash": "kill-port 3000" 
+      "restart": "kill-port 3000",
+      "crash": "kill-port 3000"
     }, 
     "delay": "1500"
   },
