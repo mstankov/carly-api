@@ -63,6 +63,7 @@ export default gql(`
     }
 
     input UserInput {
+        id: ID
         email: String
         password: String
         firstName: String

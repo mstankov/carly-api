@@ -2,6 +2,7 @@ import _  from 'lodash';
 import { Car, User } from '../mongoose/schema';
 import { GraphQLScalarType } from 'graphql';
 import { Kind } from 'graphql/language';
+import mongoose from 'mongoose';
 
 export default {
     Query: {
@@ -32,26 +33,31 @@ export default {
     Mutation: {
         // USER MUTATIONS
         addUser: async (parent, { input }) => {
+            const { id, email, password, carIds, address, firstName, lastName } = input;
+
             return await User.create({
-                email: input.email,
-                password: input.password,
-                carIds: input.carIds,
-                address: input.address,
-                firstName: input.firstName,
-                lastName: input.lastName
+                _id: id,
+                email: email,
+                password: password,
+                carIds: carIds,
+                address: address,
+                firstName: firstName,
+                lastName: lastName
             });
         },
         updateUser: async (parent, { id, input }) => {
+            const { email, password, carIds, address, firstName, lastName } = input;
+
             return await User.findByIdAndUpdate(
                 { _id: id }, 
                 { 
                     $set: { 
-                        email: input.email, 
-                        password: input.password,
-                        carIds: input.carIds,
-                        address: input.address,
-                        firstName: input.firstName,
-                        lastName: input.lastName
+                        email: email, 
+                        password: password,
+                        carIds: carIds,
+                        address: address,
+                        firstName: firstName,
+                        lastName: lastName
                     }
                 }, 
                 { new: true }, 
@@ -102,36 +108,36 @@ export default {
 
         // CAR MUTATIONS
         addCar: async (parent, { input }) => {
+            const { manufacturer, model, yearFrom, yearTo, information, horsePower, torque, imageUrl, topSpeed, doors } = input;
             return await Car.create({
-                manufacturer: input.manufacturer,
-                model: input.model,
-                yearFrom: input.yearFrom,
-                yearTo: input.yearTo,
-                information: input.information,
-                power: input.power,
-                torque: input.torque,
-                imageUrl: input.imageUrl,
-                topSpeed: input.topSpeed,
-                doors: input.doors
+                manufacturer: manufacturer,
+                model: model,
+                yearFrom: yearFrom,
+                yearTo: yearTo,
+                information: information,
+                power: horsePower,
+                torque: torque,
+                imageUrl: imageUrl,
+                topSpeed: topSpeed,
+                doors: doors
             });
         },
         updateCar: async (parent, { id, input }) => {
-            console.log(input);
+            const { manufacturer, model, yearFrom, yearTo, information, horsePower, torque, imageUrl, topSpeed, doors } = input;
             return await Car.findOneAndUpdate(
                 { _id: id },
                 {
                     $set: {
-                        manufacturer: input.manufacturer,
-                        model: input.model,
-                        yearFrom: input.yearFrom,
-                        yearTo: input.yearTo,
-                        information: input.information,
-                        power: input.power,
-                        torque: input.torque,
-                        imageUrl: input.imageUrl,
-                        topSpeed: input.topSpeed,
-                        doors: input.doors,
-                        horsePower: input.horsePower
+                        manufacturer: manufacturer,
+                        model: model,
+                        yearFrom: yearFrom,
+                        yearTo: yearTo,
+                        information: information,
+                        torque: torque,
+                        imageUrl: imageUrl,
+                        topSpeed: topSpeed,
+                        doors: doors,
+                        horsePower: horsePower
                     }
                 },
                 { new: true }, 

@@ -18,7 +18,7 @@ const CarSchema = new Schema({
 });
 
 const UserSchema = new Schema({
-    _id: { type: Schema.Types.ObjectId, auto: true },
+    _id: { type: String, index: { unique: true } },
     email: String,
     password: String,
     firstName: { type: String, required: true },
